@@ -39,6 +39,12 @@ namespace PathEditor
             ToggleContext();
         }
 
+        private void menuItemHelp_Click(object sender, System.EventArgs e)
+        {
+            using (var help = new HelpForm())
+                help.ShowDialog();
+        }
+
         private void menuItemInvalidate_Click(object sender, EventArgs e)
         {
             InvalidatePaths(_currentContext);

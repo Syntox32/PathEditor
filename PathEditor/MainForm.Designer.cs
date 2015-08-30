@@ -34,12 +34,13 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemInvalidate = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAutoBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemSwitch = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtAdd = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.menuItemInvalidate = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
-            this.menuItemSwitch});
+            this.menuItemSwitch,
+            this.menuItemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(471, 24);
@@ -102,6 +104,13 @@
             this.menuItemLoad.Size = new System.Drawing.Size(211, 22);
             this.menuItemLoad.Text = "Load backup";
             this.menuItemLoad.Click += new System.EventHandler(this.menuItemLoad_Click);
+            // 
+            // menuItemInvalidate
+            // 
+            this.menuItemInvalidate.Name = "menuItemInvalidate";
+            this.menuItemInvalidate.Size = new System.Drawing.Size(211, 22);
+            this.menuItemInvalidate.Text = "Invalidate paths";
+            this.menuItemInvalidate.Click += new System.EventHandler(this.menuItemInvalidate_Click);
             // 
             // menuItemAutoBackup
             // 
@@ -149,12 +158,12 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // menuItemInvalidate
+            // menuItemHelp
             // 
-            this.menuItemInvalidate.Name = "menuItemInvalidate";
-            this.menuItemInvalidate.Size = new System.Drawing.Size(211, 22);
-            this.menuItemInvalidate.Text = "Invalidate paths";
-            this.menuItemInvalidate.Click += new System.EventHandler(this.menuItemInvalidate_Click);
+            this.menuItemHelp.Name = "menuItemHelp";
+            this.menuItemHelp.Size = new System.Drawing.Size(44, 20);
+            this.menuItemHelp.Text = "Help";
+            this.menuItemHelp.Click += new System.EventHandler(this.menuItemHelp_Click);
             // 
             // MainForm
             // 
@@ -191,6 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemBackup;
         private System.Windows.Forms.ToolStripMenuItem menuItemAutoBackup;
         private System.Windows.Forms.ToolStripMenuItem menuItemInvalidate;
+        private System.Windows.Forms.ToolStripMenuItem menuItemHelp;
         private System.Windows.Forms.ToolStripMenuItem menuItemLoad;
     }
 }
