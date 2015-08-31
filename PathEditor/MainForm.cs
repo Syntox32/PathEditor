@@ -210,23 +210,32 @@ namespace PathEditor
 
         private void LoadBackup(string path)
         {
-            if (!File.Exists(path))
+            try
             {
-                MessageBox.Show("File does not exists: " + path,
-                    "Error: File does not exists",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("File does not exists: " + path,
+                        "Error: File does not exists",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
 
-                return;
+                    return;
+                }
+
+                var content = File.ReadAllText(path);
+
+                var vars = content.Split(';')
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToList<string>();
+
+                InitListView(vars);
             }
-
-            var content = File.ReadAllText(path);
-
-            var vars = content.Split(';')
-                .Where(x => !string.IsNullOrWhiteSpace(x))
-                .ToList<string>();
-
-            InitListView(vars);
+            catch(Exception ex)
+            {
+                MessageBox.Show(string.Format(
+                    "An error occured trying to load a backup\n\n{0}", ex.Message),
+                    "Error");
+            }
         }
 
         private bool AutoBackup(Context ctx)
@@ -292,8 +301,22 @@ namespace PathEditor
         {
             var pathVar = ConstructPathFromList();
 
-            Environment.SetEnvironmentVariable("path", var,
-                (EnvironmentVariableTarget)ctx);
+            try
+            {
+                Environment.SetEnvironmentVariable("path", var,
+                    (EnvironmentVariableTarget)ctx);
+            }
+            catch(System.Security.SecurityException ex)
+            {
+                MessageBox.Show(string.Format("An error has occured trying to set the environment variable:\n"
+                    +"\n{0}\n\nMake sure the program is run using \"Run as Administrator\"", ex.Message),
+                    "Error - Are you sure you are running as an administrator?", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private string ConstructPathFromList()
