@@ -234,10 +234,9 @@ namespace PathEditor
             var pathVar = Environment.GetEnvironmentVariable("path",
                 (EnvironmentVariableTarget)ctx);
 
-            var name = string.Format("path-editor-auto-backup-{0}-{1}-{2}.txt",
-                    _currentContext.ToString(),
-                    DateTime.Now.ToShortDateString(),
-                    DateTime.Now.ToLongTimeString());
+            var date = DateTime.Now.ToString("dd.MM.yy-HH.mm.ss");
+            var name = string.Format("path-editor-auto-backup-{0}-{1}.txt",
+                    _currentContext.ToString(), date);
 
             var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), name);
             
@@ -274,10 +273,9 @@ namespace PathEditor
 
         private string GetBackupName()
         {
-            return string.Format("path-editor-backup-{0}-{1}-{2}",
-                    _currentContext.ToString(),
-                    DateTime.Now.ToShortDateString(),
-                    DateTime.Now.ToLongTimeString());
+            var date = DateTime.Now.ToString("dd.MM.yy-HH.mm.ss");
+            return string.Format("path-editor-backup-{0}-{1}",
+                    _currentContext.ToString(), date);
         }
 
         private List<string> GetPathVariable(Context ctx)
