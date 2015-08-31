@@ -59,9 +59,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(31, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 24);
+            this.label2.Size = new System.Drawing.Size(150, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "PathEditor v1.0";
+            this.label2.Text = "PathEditor v1.0.1";
             // 
             // HelpForm
             // 
@@ -74,7 +74,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HelpForm";
-            this.Text = "PathEditor v1.0";
+            this.Text = "PathEditor v1.0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
