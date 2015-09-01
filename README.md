@@ -12,6 +12,8 @@ PathEditor is the missing editor for the Windows path variable. It's simple and 
  - Invalidate loaded paths(displayed as red if it does not exist)
  - Default automatic backup before applying changes
 
+**Make sure to run using "Run as Administrator" or else the program may not be allowed to edit the path variable**
+
 ### Automatic backups
 
 Automatic backups are done of the current environment variable(un-applied changes are not included).
