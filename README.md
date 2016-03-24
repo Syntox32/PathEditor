@@ -23,7 +23,7 @@ They will be found in your default documents folder.
 Download
 --------
 
-[You cant get binaries here, under releases](https://github.com/Syntox32/PathEditor/releases)
+[You can get binaries here, under releases](https://github.com/Syntox32/PathEditor/releases)
 
 Requirements
 ------------
